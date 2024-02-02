@@ -1,0 +1,103 @@
+[gd_scene load_steps=15 format=3 uid="uid://mtfacxdo6w4u"]
+
+[ext_resource type="Texture2D" uid="uid://vw72sn2pj7on" path="res://scenes/actors/players/player/weapons/big_space_gun/big_space_gun.png" id="1_cmm58"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_isxc8"]
+atlas = ExtResource("1_cmm58")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7kuld"]
+atlas = ExtResource("1_cmm58")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aahe6"]
+atlas = ExtResource("1_cmm58")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wj1i0"]
+atlas = ExtResource("1_cmm58")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nktqp"]
+atlas = ExtResource("1_cmm58")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fq7f3"]
+atlas = ExtResource("1_cmm58")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tle36"]
+atlas = ExtResource("1_cmm58")
+region = Rect2(288, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eokug"]
+atlas = ExtResource("1_cmm58")
+region = Rect2(336, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aondu"]
+atlas = ExtResource("1_cmm58")
+region = Rect2(384, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pkd6v"]
+atlas = ExtResource("1_cmm58")
+region = Rect2(432, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vvmdb"]
+atlas = ExtResource("1_cmm58")
+region = Rect2(480, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jnkps"]
+atlas = ExtResource("1_cmm58")
+region = Rect2(528, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_of2wq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_isxc8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7kuld")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aahe6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wj1i0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nktqp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fq7f3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tle36")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eokug")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aondu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pkd6v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vvmdb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jnkps")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="BigSpaceGun" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_of2wq")
+autoplay = "default"
+frame_progress = 0.790641
+speed_scale = 5.0

@@ -1,0 +1,116 @@
+[gd_scene load_steps=17 format=3 uid="uid://dvlxmea75b4o1"]
+
+[ext_resource type="Texture2D" uid="uid://b6wf63ge0pjk6" path="res://scenes/actors/players/player/weapons/zapper/zapper.png" id="1_hutam"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nqpa1"]
+atlas = ExtResource("1_hutam")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e7bnx"]
+atlas = ExtResource("1_hutam")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_17n6w"]
+atlas = ExtResource("1_hutam")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_usxkh"]
+atlas = ExtResource("1_hutam")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_howq7"]
+atlas = ExtResource("1_hutam")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3emrb"]
+atlas = ExtResource("1_hutam")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ijrgu"]
+atlas = ExtResource("1_hutam")
+region = Rect2(288, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cd5wa"]
+atlas = ExtResource("1_hutam")
+region = Rect2(336, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6smql"]
+atlas = ExtResource("1_hutam")
+region = Rect2(384, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tuc64"]
+atlas = ExtResource("1_hutam")
+region = Rect2(432, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_su285"]
+atlas = ExtResource("1_hutam")
+region = Rect2(480, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jfxrm"]
+atlas = ExtResource("1_hutam")
+region = Rect2(528, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d5u30"]
+atlas = ExtResource("1_hutam")
+region = Rect2(576, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8mona"]
+atlas = ExtResource("1_hutam")
+region = Rect2(624, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qe1k3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nqpa1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e7bnx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_17n6w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_usxkh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_howq7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3emrb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ijrgu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cd5wa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6smql")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tuc64")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_su285")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jfxrm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d5u30")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8mona")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Zapper" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_qe1k3")
+frame_progress = 0.653003
+speed_scale = 5.0

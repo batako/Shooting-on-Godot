@@ -1,0 +1,68 @@
+[gd_scene load_steps=10 format=3 uid="uid://ywsll3xq41pw"]
+
+[ext_resource type="Texture2D" uid="uid://cxnyvnfff6f5d" path="res://scenes/actors/players/player/weapons/auto_cannon/auto_cannon.png" id="1_ybn16"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xk0ld"]
+atlas = ExtResource("1_ybn16")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tls7w"]
+atlas = ExtResource("1_ybn16")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3qf3n"]
+atlas = ExtResource("1_ybn16")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ek1c5"]
+atlas = ExtResource("1_ybn16")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_205xu"]
+atlas = ExtResource("1_ybn16")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kakww"]
+atlas = ExtResource("1_ybn16")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g4dey"]
+atlas = ExtResource("1_ybn16")
+region = Rect2(288, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g8mmh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xk0ld")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tls7w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3qf3n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ek1c5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_205xu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kakww")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g4dey")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="AutoCannon" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_g8mmh")
+autoplay = "default"
+frame_progress = 0.856692
+speed_scale = 5.0

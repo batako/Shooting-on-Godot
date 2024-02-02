@@ -1,15 +1,20 @@
-[gd_scene load_steps=12 format=3 uid="uid://cj7cvnik5t2ef"]
+[gd_scene load_steps=17 format=3 uid="uid://cj7cvnik5t2ef"]
 
 [ext_resource type="Script" path="res://scenes/actors/players/player/player.gd" id="1_t3df5"]
 [ext_resource type="Texture2D" uid="uid://bjks23yahnvvp" path="res://scenes/actors/players/player/images/healthy.png" id="2_xfhaf"]
+[ext_resource type="PackedScene" uid="uid://mtfacxdo6w4u" path="res://scenes/actors/players/player/weapons/big_space_gun/big_space_gun.tscn" id="3_jiq5n"]
 [ext_resource type="Script" path="res://components/move_component.gd" id="3_lmdaj"]
 [ext_resource type="Script" path="res://components/attack_component.gd" id="4_ddeqj"]
-[ext_resource type="PackedScene" uid="uid://s6xsk03e5l7g" path="res://scenes/bullets/basic/basic.tscn" id="5_er1it"]
+[ext_resource type="PackedScene" uid="uid://c5fak2badvt13" path="res://scenes/actors/players/player/weapons/rockets/rockets.tscn" id="4_rgbsv"]
+[ext_resource type="PackedScene" uid="uid://dvlxmea75b4o1" path="res://scenes/actors/players/player/weapons/zapper/zapper.tscn" id="5_7d4xv"]
+[ext_resource type="PackedScene" uid="uid://s6xsk03e5l7g" path="res://scenes/bullets/basic_fx01/basic_fx01.tscn" id="5_er1it"]
 [ext_resource type="Script" path="res://components/damage_texture_component.gd" id="5_redi2"]
 [ext_resource type="Texture2D" uid="uid://cmdfatsbypm0q" path="res://scenes/actors/players/player/images/minor_damage.png" id="6_g827b"]
+[ext_resource type="PackedScene" uid="uid://dk867mefmabqy" path="res://scenes/bullets/basic_fx02/basic_fx02.tscn" id="6_wqjgy"]
 [ext_resource type="Texture2D" uid="uid://di2w7wvwshbal" path="res://scenes/actors/players/player/images/major_damage.png" id="7_g4oqg"]
 [ext_resource type="Texture2D" uid="uid://cr5qf6e86cfsp" path="res://scenes/actors/players/player/images/critical_damage.png" id="8_l0vpt"]
 [ext_resource type="Script" path="res://components/health_component.gd" id="9_ylyue"]
+[ext_resource type="PackedScene" uid="uid://ywsll3xq41pw" path="res://scenes/actors/players/player/weapons/auto_cannon/auto_cannon.tscn" id="12_8b0py"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gfah0"]
 radius = 19.0
@@ -19,6 +24,18 @@ height = 38.0
 script = ExtResource("1_t3df5")
 max_hp = 10.0
 
+[node name="AutoCannon" parent="." instance=ExtResource("12_8b0py")]
+visible = false
+
+[node name="BigSpaceGun" parent="." instance=ExtResource("3_jiq5n")]
+visible = false
+
+[node name="Rockets" parent="." instance=ExtResource("4_rgbsv")]
+visible = false
+
+[node name="Zapper" parent="." instance=ExtResource("5_7d4xv")]
+visible = false
+
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_xfhaf")
 
@@ -27,10 +44,11 @@ shape = SubResource("CapsuleShape2D_gfah0")
 
 [node name="MoveComponent" type="Node" parent="."]
 script = ExtResource("3_lmdaj")
+move_speed = 400.0
 
 [node name="AttackComponent" type="Node" parent="."]
 script = ExtResource("4_ddeqj")
-BulletScenes = Array[PackedScene]([ExtResource("5_er1it")])
+BulletScenes = Array[PackedScene]([ExtResource("5_er1it"), ExtResource("6_wqjgy")])
 
 [node name="DamageTextureComponent" type="Node" parent="." node_paths=PackedStringArray("Sprite")]
 script = ExtResource("5_redi2")
