@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://vcau2e6ovk4f"]
+
+[ext_resource type="Script" path="res://src/actors/enemies/battlecruiser/battlecruiser.gd" id="1_ylvyb"]
+[ext_resource type="Texture2D" uid="uid://v0xgoymm1vm2" path="res://src/actors/enemies/battlecruiser/images/destruction.png" id="2_6h6yu"]
+[ext_resource type="Script" path="res://components/health_component.gd" id="3_k2o5c"]
+[ext_resource type="Script" path="res://components/destruction_component.gd" id="5_5vmbg"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_owe1u"]
+radius = 32.0
+height = 96.0
+
+[node name="Battlecruiser" type="CharacterBody2D" groups=["Enemy"]]
+script = ExtResource("1_ylvyb")
+max_hp = 1.0
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_6h6yu")
+hframes = 13
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_owe1u")
+
+[node name="HealthComponent" type="Node" parent="."]
+script = ExtResource("3_k2o5c")
+
+[node name="DestructionComponent" type="Node" parent="." node_paths=PackedStringArray("sprite")]
+script = ExtResource("5_5vmbg")
+sprite = NodePath("../Sprite")
+max_frame = 12
+frames_per_second = 12.0

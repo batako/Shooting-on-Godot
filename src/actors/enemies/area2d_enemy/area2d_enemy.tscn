@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bpgioaiy6weij"]
 
-[ext_resource type="Script" path="res://src/Enemies/Enemy.gd" id="1_60wuo"]
+[ext_resource type="Script" path="res://src/actors/enemies/area2d_enemy/area2d_enemy.gd" id="1_60wuo"]
 [ext_resource type="Texture2D" uid="uid://cdhstrhkdf1pq" path="res://assets/images/icon.svg" id="2_arx2k"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ptabd"]

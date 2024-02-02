@@ -1,0 +1,42 @@
+[gd_scene load_steps=11 format=3 uid="uid://cj7cvnik5t2ef"]
+
+[ext_resource type="Script" path="res://src/actors/players/player/player.gd" id="1_t3df5"]
+[ext_resource type="Texture2D" uid="uid://bjks23yahnvvp" path="res://src/actors/players/player/images/healthy.png" id="2_xfhaf"]
+[ext_resource type="Script" path="res://components/move_component.gd" id="3_lmdaj"]
+[ext_resource type="Script" path="res://components/attack_component.gd" id="4_ddeqj"]
+[ext_resource type="Script" path="res://components/damage_texture_component.gd" id="5_redi2"]
+[ext_resource type="Texture2D" uid="uid://cmdfatsbypm0q" path="res://src/actors/players/player/images/minor_damage.png" id="6_g827b"]
+[ext_resource type="Texture2D" uid="uid://di2w7wvwshbal" path="res://src/actors/players/player/images/major_damage.png" id="7_g4oqg"]
+[ext_resource type="Texture2D" uid="uid://cr5qf6e86cfsp" path="res://src/actors/players/player/images/critical_damage.png" id="8_l0vpt"]
+[ext_resource type="Script" path="res://components/health_component.gd" id="9_ylyue"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gfah0"]
+radius = 19.0
+height = 38.0
+
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
+script = ExtResource("1_t3df5")
+max_hp = 10.0
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_xfhaf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_gfah0")
+
+[node name="MoveComponent" type="Node" parent="."]
+script = ExtResource("3_lmdaj")
+
+[node name="AttackComponent" type="Node" parent="."]
+script = ExtResource("4_ddeqj")
+
+[node name="DamageTextureComponent" type="Node" parent="." node_paths=PackedStringArray("Sprite")]
+script = ExtResource("5_redi2")
+Sprite = NodePath("../Sprite")
+healthy_texture = ExtResource("2_xfhaf")
+minor_damage_texture = ExtResource("6_g827b")
+major_damage_texture = ExtResource("7_g4oqg")
+critical_damage_texture = ExtResource("8_l0vpt")
+
+[node name="HealthComponent" type="Node" parent="."]
+script = ExtResource("9_ylyue")

@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://da5niqj4lmq1y"]
+
+[ext_resource type="Texture2D" uid="uid://cauddbr8330gv" path="res://src/actors/enemies/frigate/images/destruction.png" id="1_4704e"]
+[ext_resource type="Script" path="res://src/actors/enemies/frigate/frigate.gd" id="1_dl4m4"]
+[ext_resource type="Script" path="res://components/health_component.gd" id="2_mwqe3"]
+[ext_resource type="Script" path="res://components/destruction_component.gd" id="3_8s38n"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lko2d"]
+radius = 24.0
+
+[node name="Frigate" type="CharacterBody2D" groups=["Enemy"]]
+script = ExtResource("1_dl4m4")
+max_hp = 5.0
+
+[node name="Sprite" type="Sprite2D" parent="." groups=["Enemy"]]
+texture = ExtResource("1_4704e")
+hframes = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_lko2d")
+
+[node name="HealthComponent" type="Node" parent="."]
+script = ExtResource("2_mwqe3")
+
+[node name="DestructionComponent" type="Node" parent="." node_paths=PackedStringArray("sprite")]
+script = ExtResource("3_8s38n")
+sprite = NodePath("../Sprite")
+max_frame = 8
+frames_per_second = 8.0

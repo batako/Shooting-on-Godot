@@ -37,7 +37,7 @@ func _process_shooting() -> void:
 
 func _single_shoot_bullet() -> void:
 	# 弾のプレハブをロード
-	var bullet: Area2D = preload("res://src/Bullets/BulletBasic.tscn").instantiate()
+	var bullet: Area2D = preload("res://src/bullets/basic.tscn").instantiate()
 	# 弾の位置をプレイヤーの位置に設定
 	bullet.position = self.position
 	# 弾をシーンに追加

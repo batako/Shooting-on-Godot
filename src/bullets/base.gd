@@ -9,16 +9,21 @@ const OFF_SCREEN_MARGIN: int = 10
 # ファイルのパス取得
 var script_path = get_script().resource_path
 
-func _process(delta):
+func _process(delta: float):
 	_move_bullet(delta)
 	_check_off_screen()
 
-func _on_area_entered(area):
-	if area.is_in_group("Enemy"):
+func _on_body_entered(body: Node):
+	var created_by = str(get_meta("created_by"))
+	
+	# 衝突した対象が作成者ではないこと
+	if !body.is_in_group(created_by):
+		var health_component: HealthComponent = find_health_component(body)
+		health_component.apply_damage(damage)
 		queue_free()
 
 # 弾の移動処理
-func _move_bullet(_delta):
+func _move_bullet(_delta: float):
 	assert(false, str(script_path) + " の _move_bullet を上書きしてください。")
 
 # 画面外の場合は削除
@@ -30,3 +35,9 @@ func _check_off_screen():
 # ダメージ量を取得
 func get_damage() -> int:
 	return damage
+
+func find_health_component(body: Node) -> Node:
+	for child in body.get_children():
+		if child is HealthComponent:
+			return child
+	return null

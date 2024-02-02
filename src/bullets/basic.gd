@@ -1,6 +1,6 @@
 # 直進だけする弾
 
-extends "res://src/Bullets/BulletBase.gd"
+extends "res://src/bullets/base.gd"
 
 # 弾の移動処理
 func _move_bullet(delta):
