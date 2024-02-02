@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://cj7cvnik5t2ef"]
+[gd_scene load_steps=12 format=3 uid="uid://cj7cvnik5t2ef"]
 
 [ext_resource type="Script" path="res://src/actors/players/player/player.gd" id="1_t3df5"]
 [ext_resource type="Texture2D" uid="uid://bjks23yahnvvp" path="res://src/actors/players/player/images/healthy.png" id="2_xfhaf"]
 [ext_resource type="Script" path="res://components/move_component.gd" id="3_lmdaj"]
 [ext_resource type="Script" path="res://components/attack_component.gd" id="4_ddeqj"]
+[ext_resource type="PackedScene" uid="uid://s6xsk03e5l7g" path="res://src/bullets/basic/basic.tscn" id="5_er1it"]
 [ext_resource type="Script" path="res://components/damage_texture_component.gd" id="5_redi2"]
 [ext_resource type="Texture2D" uid="uid://cmdfatsbypm0q" path="res://src/actors/players/player/images/minor_damage.png" id="6_g827b"]
 [ext_resource type="Texture2D" uid="uid://di2w7wvwshbal" path="res://src/actors/players/player/images/major_damage.png" id="7_g4oqg"]
@@ -29,6 +30,7 @@ script = ExtResource("3_lmdaj")
 
 [node name="AttackComponent" type="Node" parent="."]
 script = ExtResource("4_ddeqj")
+BulletScenes = Array[PackedScene]([ExtResource("5_er1it")])
 
 [node name="DamageTextureComponent" type="Node" parent="." node_paths=PackedStringArray("Sprite")]
 script = ExtResource("5_redi2")

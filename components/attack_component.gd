@@ -1,10 +1,15 @@
 class_name AttackComponent
 extends Node
 
+@export var BulletScenes: Array[PackedScene]
+@export var default_bullet_scene_index: int = 0
+
 var actor: CharacterBody2D
+var bullet_scene_index: int
 
 func _ready():
 	actor = get_parent()
+	bullet_scene_index = default_bullet_scene_index
 
 func _process(_delta: float) -> void:
 	process_shooting()
@@ -14,13 +19,9 @@ func process_shooting() -> void:
 		single_shoot_bullet()
 
 func single_shoot_bullet() -> void:
-	# 弾のプレハブをロード
-	var bullet: Area2D = preload("res://src/bullets/basic/basic.tscn").instantiate()
-	# 作成者のメタ情報に登録
+	var bullet: Area2D = BulletScenes[bullet_scene_index].instantiate()
 	bullet.set_meta("created_by", get_actor_group_name())
-	# 弾の位置をプレイヤーの位置に設定
 	bullet.position = actor.position
-	# 弾をシーンに追加
 	get_tree().root.add_child(bullet)
 
 func get_actor_group_name() -> String:
