@@ -6,6 +6,9 @@ extends Area2D
 const OFF_SCREEN_MARGIN: int = 10
 @export var HitEffectScene: PackedScene
 
+func _ready():
+	connect("body_entered", _on_body_entered.bind())
+
 func _process(delta: float):
 	_move_bullet(delta)
 	_check_off_screen()
