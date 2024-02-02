@@ -15,7 +15,7 @@ func process_shooting() -> void:
 
 func single_shoot_bullet() -> void:
 	# 弾のプレハブをロード
-	var bullet: Area2D = preload("res://src/bullets/basic.tscn").instantiate()
+	var bullet: Area2D = preload("res://src/bullets/basic/basic.tscn").instantiate()
 	# 作成者のメタ情報に登録
 	bullet.set_meta("created_by", get_actor_group_name())
 	# 弾の位置をプレイヤーの位置に設定

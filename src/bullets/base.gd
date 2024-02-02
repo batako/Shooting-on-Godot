@@ -1,13 +1,10 @@
+class_name BulletBase
 extends Area2D
 
-# 弾の速度
 @export var speed: float = 1000
-# 弾のダメージ量
 @export var damage: int = 1
-# 画面外のマージン
 const OFF_SCREEN_MARGIN: int = 10
-# ファイルのパス取得
-var script_path = get_script().resource_path
+@export var HitEffectScene: PackedScene
 
 func _process(delta: float):
 	_move_bullet(delta)
@@ -21,9 +18,15 @@ func _on_body_entered(body: Node):
 		var health_component: HealthComponent = find_health_component(body)
 		health_component.apply_damage(damage)
 		queue_free()
+		
+		if HitEffectScene:
+			var hit_effect = HitEffectScene.instantiate()
+			hit_effect.position = position
+			get_tree().root.add_child(hit_effect)
 
 # 弾の移動処理
 func _move_bullet(_delta: float):
+	var script_path = get_script().resource_path
 	assert(false, str(script_path) + " の _move_bullet を上書きしてください。")
 
 # 画面外の場合は削除
