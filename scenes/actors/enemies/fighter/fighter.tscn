@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://1te42mayrutk"]
+
+[ext_resource type="Script" path="res://scenes/actors/enemies/fighter/fighter.gd" id="1_ng1nk"]
+[ext_resource type="Texture2D" uid="uid://bk1ihonmvr51h" path="res://scenes/actors/enemies/fighter/images/destruction.png" id="2_foiab"]
+[ext_resource type="Script" path="res://components/health_component.gd" id="3_dag75"]
+[ext_resource type="Script" path="res://components/destruction_component.gd" id="4_2e20r"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jah4b"]
+radius = 16.0
+
+[node name="Fighter" type="CharacterBody2D" groups=["Enemy"]]
+script = ExtResource("1_ng1nk")
+max_hp = 4.0
+
+[node name="Sprite" type="Sprite2D" parent="." groups=["Enemy"]]
+texture = ExtResource("2_foiab")
+hframes = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_jah4b")
+
+[node name="HealthComponent" type="Node" parent="."]
+script = ExtResource("3_dag75")
+
+[node name="DestructionComponent" type="Node" parent="." node_paths=PackedStringArray("sprite")]
+script = ExtResource("4_2e20r")
+sprite = NodePath("../Sprite")
+max_frame = 8
+frames_per_second = 8.0

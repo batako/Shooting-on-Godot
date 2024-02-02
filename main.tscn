@@ -1,14 +1,14 @@
 [gd_scene load_steps=10 format=3 uid="uid://y80u3a2s5j2t"]
 
-[ext_resource type="PackedScene" uid="uid://vcau2e6ovk4f" path="res://src/actors/enemies/battlecruiser/battlecruiser.tscn" id="1_0y73g"]
-[ext_resource type="PackedScene" uid="uid://beqish0dcdx5v" path="res://src/actors/enemies/bomber/bomber.tscn" id="2_bxult"]
-[ext_resource type="PackedScene" uid="uid://bm02qlp7dbxjj" path="res://src/actors/enemies/dreadnought/dreadnought.tscn" id="3_553gh"]
-[ext_resource type="PackedScene" uid="uid://1te42mayrutk" path="res://src/actors/enemies/fighter/fighter.tscn" id="4_kgq4a"]
-[ext_resource type="PackedScene" uid="uid://da5niqj4lmq1y" path="res://src/actors/enemies/frigate/frigate.tscn" id="5_3njtu"]
-[ext_resource type="PackedScene" uid="uid://cj7cvnik5t2ef" path="res://src/actors/players/player/player.tscn" id="6_e33dj"]
-[ext_resource type="PackedScene" uid="uid://diypq2dybtmeu" path="res://src/actors/enemies/scout/scout.tscn" id="7_genw4"]
-[ext_resource type="PackedScene" uid="uid://ce58mvoffubon" path="res://src/actors/enemies/support/support.tscn" id="8_ufu68"]
-[ext_resource type="PackedScene" uid="uid://bu07rc67xux4t" path="res://src/actors/enemies/torpedo_ship/torpedo_ship.tscn" id="9_gpmdj"]
+[ext_resource type="PackedScene" uid="uid://vcau2e6ovk4f" path="res://scenes/actors/enemies/battlecruiser/battlecruiser.tscn" id="1_0y73g"]
+[ext_resource type="PackedScene" uid="uid://beqish0dcdx5v" path="res://scenes/actors/enemies/bomber/bomber.tscn" id="2_bxult"]
+[ext_resource type="PackedScene" uid="uid://bm02qlp7dbxjj" path="res://scenes/actors/enemies/dreadnought/dreadnought.tscn" id="3_553gh"]
+[ext_resource type="PackedScene" uid="uid://1te42mayrutk" path="res://scenes/actors/enemies/fighter/fighter.tscn" id="4_kgq4a"]
+[ext_resource type="PackedScene" uid="uid://da5niqj4lmq1y" path="res://scenes/actors/enemies/frigate/frigate.tscn" id="5_3njtu"]
+[ext_resource type="PackedScene" uid="uid://cj7cvnik5t2ef" path="res://scenes/actors/players/player/player.tscn" id="6_e33dj"]
+[ext_resource type="PackedScene" uid="uid://diypq2dybtmeu" path="res://scenes/actors/enemies/scout/scout.tscn" id="7_genw4"]
+[ext_resource type="PackedScene" uid="uid://ce58mvoffubon" path="res://scenes/actors/enemies/support/support.tscn" id="8_ufu68"]
+[ext_resource type="PackedScene" uid="uid://bu07rc67xux4t" path="res://scenes/actors/enemies/torpedo_ship/torpedo_ship.tscn" id="9_gpmdj"]
 
 [node name="Main" type="Node2D"]
 

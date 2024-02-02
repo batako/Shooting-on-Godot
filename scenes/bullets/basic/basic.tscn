@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://s6xsk03e5l7g"]
+
+[ext_resource type="Script" path="res://scenes/bullets/basic/basic.gd" id="1_k3jli"]
+[ext_resource type="PackedScene" uid="uid://cd8bm5iv5ilgt" path="res://scenes/effects/explosion/explosion.tscn" id="2_srxtd"]
+[ext_resource type="Texture2D" uid="uid://cdhstrhkdf1pq" path="res://assets/images/icon.svg" id="3_48n5e"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x4k4s"]
+radius = 8.0
+height = 34.0
+
+[node name="BulletBasic" type="Area2D" groups=["Bullet"]]
+script = ExtResource("1_k3jli")
+HitEffectScene = ExtResource("2_srxtd")
+
+[node name="Image" type="Sprite2D" parent="."]
+scale = Vector2(0.117187, 0.234375)
+texture = ExtResource("3_48n5e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_x4k4s")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
