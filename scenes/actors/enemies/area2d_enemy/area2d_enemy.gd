@@ -1,1 +1,1 @@
-extends "res://src/actors/enemies/area2d_enemy/area2d_base.gd"
+extends "res://scenes/actors/enemies/area2d_enemy/area2d_base.gd"
