@@ -1,6 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://mtfacxdo6w4u"]
+[gd_scene load_steps=17 format=3 uid="uid://mtfacxdo6w4u"]
 
 [ext_resource type="Texture2D" uid="uid://vw72sn2pj7on" path="res://scenes/actors/players/player/weapons/big_space_gun/big_space_gun.png" id="1_cmm58"]
+[ext_resource type="PackedScene" uid="uid://s6xsk03e5l7g" path="res://scenes/bullets/basic_fx01/basic_fx01.tscn" id="3_03fh2"]
+[ext_resource type="Script" path="res://components/weapon_component.gd" id="3_i0tuw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_isxc8"]
 atlas = ExtResource("1_cmm58")
@@ -89,8 +91,8 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jnkps")
 }],
-"loop": true,
-"name": &"default",
+"loop": false,
+"name": &"attack",
 "speed": 5.0
 }]
 
@@ -98,6 +100,13 @@ animations = [{
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_of2wq")
-autoplay = "default"
-frame_progress = 0.790641
+animation = &"attack"
+frame = 11
+frame_progress = 1.0
 speed_scale = 5.0
+
+[node name="WeaponComponent" type="Node" parent="." node_paths=PackedStringArray("AnimatedSprite")]
+script = ExtResource("3_i0tuw")
+AnimatedSprite = NodePath("../AnimatedSprite2D")
+BulletScene = ExtResource("3_03fh2")
+attack_interval_seconds = 0.2

@@ -1,22 +1,34 @@
 class_name AttackComponent
 extends Node
 
+@export var WeaponRootNode: Node2D
+@export var WeaponScenes: Array[PackedScene]
+@export var default_weapon_scene_index: int = 0
+
 @export var BulletScenes: Array[PackedScene]
 @export var default_bullet_scene_index: int = 0
 
 var actor: CharacterBody2D
+var weapon_scene_index: int
 var bullet_scene_index: int
+
+var attack_interval_seconds: float = 0.2
+var time_since_last_attack_seconds: float = 0
 
 func _ready():
 	actor = get_parent()
+	weapon_scene_index = default_weapon_scene_index
 	bullet_scene_index = default_bullet_scene_index
+	set_weapon()
 
-func _process(_delta: float) -> void:
-	process_shooting()
+func _process(delta: float) -> void:
+	time_since_last_attack_seconds += delta
+	#process_shooting()
 
 func process_shooting() -> void:
-	if Input.is_action_just_pressed("single_shoot"):
+	if Input.is_action_pressed("single_shoot") and time_since_last_attack_seconds >= attack_interval_seconds:
 		single_shoot_bullet()
+		time_since_last_attack_seconds = 0
 
 func single_shoot_bullet() -> void:
 	var bullet: Area2D = BulletScenes[bullet_scene_index].instantiate()
@@ -30,3 +42,7 @@ func get_actor_group_name() -> String:
 	elif actor.is_in_group("Enemy"):
 		return "Enemy"
 	return ""
+
+func set_weapon() -> void:
+	var weapon: Node2D = WeaponScenes[weapon_scene_index].instantiate()
+	WeaponRootNode.add_child(weapon)

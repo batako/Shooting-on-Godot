@@ -24,17 +24,7 @@ height = 38.0
 script = ExtResource("1_t3df5")
 max_hp = 10.0
 
-[node name="AutoCannon" parent="." instance=ExtResource("12_8b0py")]
-visible = false
-
-[node name="BigSpaceGun" parent="." instance=ExtResource("3_jiq5n")]
-visible = false
-
-[node name="Rockets" parent="." instance=ExtResource("4_rgbsv")]
-visible = false
-
-[node name="Zapper" parent="." instance=ExtResource("5_7d4xv")]
-visible = false
+[node name="Weapon" type="Node2D" parent="."]
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_xfhaf")
@@ -46,8 +36,11 @@ shape = SubResource("CapsuleShape2D_gfah0")
 script = ExtResource("3_lmdaj")
 move_speed = 400.0
 
-[node name="AttackComponent" type="Node" parent="."]
+[node name="AttackComponent" type="Node" parent="." node_paths=PackedStringArray("WeaponRootNode")]
 script = ExtResource("4_ddeqj")
+WeaponRootNode = NodePath("../Weapon")
+WeaponScenes = Array[PackedScene]([ExtResource("12_8b0py"), ExtResource("3_jiq5n"), ExtResource("4_rgbsv"), ExtResource("5_7d4xv")])
+default_weapon_scene_index = 1
 BulletScenes = Array[PackedScene]([ExtResource("5_er1it"), ExtResource("6_wqjgy")])
 
 [node name="DamageTextureComponent" type="Node" parent="." node_paths=PackedStringArray("Sprite")]
